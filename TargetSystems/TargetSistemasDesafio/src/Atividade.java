@@ -10,14 +10,11 @@ public class Atividade {
 
     public void q1() {
         int indice = 13;
-        int soma = 0, b = 0;
+        int soma = 0, k = 0;
 
-        do {
-            soma = soma + 1;
-
-            b = soma + b;
-
-        } while (soma < indice);
+       for (k = 0; k < indice; k++) {
+           soma = k + soma;
+       }
 
         System.out.println(soma);
     }
@@ -26,9 +23,10 @@ public class Atividade {
 
         System.out.println("Insira o valor a ser buscado");
         int a = scan.nextInt();
+        int value = scan.nextInt();
 
-        //altere x para o valor desejado
-        int x = 4;
+        System.out.println("insira o valor ate onde sera gerado a sequencia");
+        int x = value;
         int n1 = 1, n2 = 1;
 
         x = x - 2;
@@ -121,22 +119,22 @@ public class Atividade {
     }
 
     public void q4() {
-            String[] states = {"SP", "RJ", "MG", "ES", "OUTROS"};
-            double[] faturamento = {67836.43, 36678.66, 29229.88, 27165.48, 19849.53};
+        String[] states = {"SP", "RJ", "MG", "ES", "OUTROS"};
+        double[] faturamento = {67836.43, 36678.66, 29229.88, 27165.48, 19849.53};
 
-            // Calcula o faturamento total
-            double faturamentoTotal = 0;
-            for (double valor : faturamento) {
-                faturamentoTotal += valor;
-            }
 
-            System.out.printf("O faturamento total da Distribuidora foi: R$ %.2f%n", faturamentoTotal);
+        double faturamentoTotal = 0;
+        for (double valor : faturamento) {
+            faturamentoTotal += valor;
+        }
 
-            // Calcula e exibe os percentuais
-            for (int i = 0; i < faturamento.length; i++) {
-                double percentual = (faturamento[i] / faturamentoTotal) * 100;
-                System.out.printf("O percentual de faturamento de %s é: %.2f %%\n", states[i], percentual);
-            }
+        System.out.printf("O faturamento total da Distribuidora foi: R$ %.2f%n", faturamentoTotal);
+
+
+        for (int i = 0; i < faturamento.length; i++) {
+            double percentual = (faturamento[i] / faturamentoTotal) * 100;
+            System.out.printf("O percentual de faturamento de %s é: %.2f %%\n", states[i], percentual);
+        }
     }
 
     public void q5(){
@@ -144,17 +142,17 @@ public class Atividade {
         String scanner = scan.nextLine();
 
 
-        char[] caracteres = scanner.toCharArray();
+        char[] characters = scanner.toCharArray();
 
-        for (int i = 0, j = caracteres.length - 1; i < j; i++, j--) {
-            char temp = caracteres[i];
-            caracteres[i] = caracteres[j];
-            caracteres[j] = temp;
+        for (int i = 0, j = characters.length - 1; i < j; i++, j--) {
+            char temp = characters[i];
+            characters[i] = characters[j];
+            characters[j] = temp;
         }
 
-        String invertida = new String(caracteres);
+        String inverted = new String(characters);
 
 
-        System.out.println("String invertida: " + invertida);
+        System.out.println("String invertida: " + inverted);
     }
 }
